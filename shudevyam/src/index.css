@@ -1,0 +1,17 @@
+/* 1. Import Fragment Mono from Google */
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap');
+
+/* 2. Import Tailwind */
+@import "tailwindcss";
+
+/* 3. Configure the Theme */
+@theme {
+  /* Define the font variable */
+  --font-fragment: "Fragment Mono", monospace;
+}
+
+/* 4. Apply it globally */
+:root {
+  /* This sets Fragment Mono as the default font for the whole site */
+  font-family: var(--font-fragment);
+}
