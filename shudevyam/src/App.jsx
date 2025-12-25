@@ -36,9 +36,9 @@ function App() {
 
 
   return (
-    <div>
-      <main>
-        <Navbar />
+    <div className='no-scrollbar'> 
+      <Navbar />
+      <main className='-mt-8'> 
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/gallery' element={<Gallery />} />
