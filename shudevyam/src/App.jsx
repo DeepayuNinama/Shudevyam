@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
 
 // Page Imports
-import Home from './pages/home.jsx';
+import Home from "./pages/Home.jsx"; 
 import Gallery from './pages/Gallery.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
@@ -49,7 +49,8 @@ function App() {
         </Routes>
       </main>
       
-      <Footer />
+      <div className='mt-40'><Footer /></div>
+      
     </div>
   )
 }

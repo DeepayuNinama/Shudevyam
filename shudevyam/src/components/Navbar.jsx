@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav className="flex bg-transparent  items-center justify-between absolute top-0 left-0 w-full z-10 pr-0">
         
         <div className="flex w-1/3 h-24 items-center pl-28 pt-1">
-            <img src="/images/logo.png" alt="Logo" className="max-h-full object-contain" />
+            <img src="/images/pnglogo.png" alt="Logo" className="max-h-full object-contain" />
         </div>
 
         <div className="bg-black font-fragment h-24 w-1/2 mr-28 uppercase flex items-center justify-between px-16 text-white">
