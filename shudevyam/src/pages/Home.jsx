@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className='w-screen  ml-[50%] -translate-x-1/2  '>
 
-      <section className="w-full h-screen bg-[url('./images/temp.jpg')] bg-cover bg-center flex  ">
+      <section className="w-full h-screen bg-[url('/images/temp.jpg')] bg-cover bg-center flex  ">
         <div className='w-2/4 flex flex-col  items-left justify-end pl-20 pb-28  gap-8 font-[montserat]'>
           <p className='text-white text-2xl text-start'>Bold looks for the next era</p>
           <p className='text-white text-8xl text-start'>"Where moments become monuments"</p>
