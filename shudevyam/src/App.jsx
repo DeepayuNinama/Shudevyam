@@ -26,6 +26,7 @@ function App() {
       '/': 'Home',
       '/gallery': 'Gallery',
       '/about': 'About',
+      '/testimonials': 'Testimonials',
       '/contact': 'Contact',
     };
     const title = pathToTitle[location.pathname] || '404 Not Found';

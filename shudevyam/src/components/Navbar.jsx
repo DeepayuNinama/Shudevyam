@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="flex bg-transparent  items-center justify-between absolute top-0 left-0 w-full z-10 pr-0">
         
-        <div className="flex w-1/3 h-24 items-center pl-28 pt-1">
+        <div className="flex w-1/3 h-24 items-center pl-20 pt-1">
             <img src="/images/pnglogo.png" alt="Logo" className="max-h-full object-contain" />
         </div>
 

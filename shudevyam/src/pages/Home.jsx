@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className='w-screen  ml-[50%] -translate-x-1/2  '>
 
-      <section className="w-full h-screen bg-[url('./images/temp.jpg')] bg-cover bg-center flex  ">
+      <section className="flex w-full h-screen bg-[url('./images/temp.jpg')] bg-cover bg-top   ">
         <div className='w-2/4 flex flex-col  items-left justify-end pl-20 pb-28  gap-8 font-[montserat]'>
           <p className='text-white text-2xl text-start'>Bold looks for the next era</p>
           <p className='text-white text-8xl text-start'>"Where moments become monuments"</p>
@@ -14,7 +14,7 @@ export default function Home() {
 
       <section className='flex mx-20 justify-between  mt-28'>
         <div className='w-1/6 flex'>
-          <h1 className='text-6xl text-stone-200'>01</h1>
+          <h1 className='text-6xl text-stone-200'>11</h1>
         </div>
 
         <div className='flex flex-col w-4/6 '>
@@ -47,6 +47,20 @@ export default function Home() {
         </div>
 
           <HorizontalScrollSection />
+
+          <button className='mt-20 px-8 py-3 border border-black uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all duration-300'>
+            Explore More
+          </button>
+      </section>
+
+      <section className='flex mt-38 items-start -mb-40 bg-red-950 w-full h-180 justify-center'>
+        
+        <div className='flex flex-col justify-start items-star'>
+          <h1 className='text-white font-rozha text-[400px] hover:text-[#4f0303] transition-all duration-800'>शुदेवयम</h1>
+          <p className='text-white text-end pr-10 -mt-30 text-2xl'>Since 2014 </p>
+        </div>
+
+
       </section>
     </div>
   );
