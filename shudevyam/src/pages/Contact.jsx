@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import tempBg from '/images/bg-contact.jpg';
 
 const Contact = () => {
   const [selectedOption, setSelectedOption] = React.useState("Option A");
@@ -6,7 +7,7 @@ const Contact = () => {
 
   return (
     <div className="w-screen  ml-[50%] -translate-x-1/2 -mb-40 ">
-      <section className="justify-end flex w-full h-screen bg-[url('./images/bg-contact.jpg')] bg-cover bg-top items-center ">
+      <section className="justify-end flex w-full h-screen bg-cover bg-top items-center " style={{ backgroundImage: `url(${tempBg})` }}>
 
         <form className=" flex flex-col justify-center text-start text-white h-180 w-1/2 mt-24 mr-28 bg-[#800000] px-16 py-12 " >
           <h1 className="text-5xl">I'm Interested in..</h1>
