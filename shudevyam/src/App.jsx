@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { NavLink, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
 
 // Page Imports
@@ -14,10 +14,17 @@ import Testimonials from './pages/Testimonials.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 
+const activeLink = "flex h-full items-center border-t-4 border-[#800000] text-white";
+const inactiveLink = "flex h-full items-center border-t-4 border-transparent text-zinc-400 hover:text-white hover:pt-2 transition-all duration-200";
 
 function App() {
   const [count, setCount] = useState(0)
   const location = useLocation();
+
+  const isHomePage = location.pathname === '/';
+  const logoSrc = isHomePage 
+    ? "/images/shydevyamwhite.png" 
+    : "/images/shydevyambrown.png";
 
   useEffect(() => {
     let path = location.pathname.toLowerCase();

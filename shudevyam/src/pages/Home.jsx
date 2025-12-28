@@ -31,7 +31,7 @@ export default function Home() {
               quis nostrud exercitation ullamco laboris nisi ut.
             </p>
 
-            <img src="/images/temp.jpg" className='w-2/3 h-60' alt="" />
+            <img src="/images/temp.jpg" className='w-2/3 h-60 object-cover' alt="" />
           </div>
 
         </div>
