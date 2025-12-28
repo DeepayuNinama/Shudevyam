@@ -9,11 +9,10 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Testimonials from './pages/Testimonials.jsx';
-import Footer from './pages/Footer.jsx';
-
 
 // Component Imports
 import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
 
 
 function App() {

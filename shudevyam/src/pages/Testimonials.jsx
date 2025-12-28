@@ -122,7 +122,7 @@ export default function Testimonials() {
             </AnimatePresence>
 
             {/* NAVIGATION BUTTONS (Placed outside animation wrapper to stay stable) */}
-            <div className='flex justify-end gap-5 mt-[-4rem] relative z-20'>
+            <div className='flex justify-end gap-5 -mt-16 relative z-20'>
                 <button 
                   onClick={handlePrev}
                   className='p-4 border rounded-full border-[#ffffff2f] hover:bg-[#ffffff2f] transition-all text-white'
