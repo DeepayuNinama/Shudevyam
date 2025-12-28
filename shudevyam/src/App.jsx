@@ -18,10 +18,15 @@ import Navbar from './components/Navbar.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
-
-
   const location = useLocation();
+
   useEffect(() => {
+    let path = location.pathname.toLowerCase();
+    
+    if (path !== '/' && path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
+
     const pathToTitle = {
       '/': 'Home',
       '/gallery': 'Gallery',
@@ -29,10 +34,11 @@ function App() {
       '/testimonials': 'Testimonials',
       '/contact': 'Contact',
     };
-    const title = pathToTitle[location.pathname] || '404 Not Found';
+
+    const title = pathToTitle[path] || '404 Not Found';
 
     document.title = `${title}  •   Shudevyam`;
-  }, [location.pathname]);
+  }, [location]);
 
 
 
@@ -50,7 +56,9 @@ function App() {
         </Routes>
       </main>
       
-      <div className='mt-40'><Footer /></div>
+      <div className='mt-40'>
+        <Footer />
+      </div>
       
     </div>
   )

@@ -1,8 +1,10 @@
 import React from 'react';
 import HorizontalScrollSection from '../components/HorizontalScrollSection.jsx'
 import tempBg from '/images/temp.jpg';
+import { redirect, useNavigate  } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div className='w-screen  ml-[50%] -translate-x-1/2  '>
 
@@ -49,12 +51,13 @@ export default function Home() {
 
           <HorizontalScrollSection />
 
-          <button className='mt-20 px-8 py-3 border border-black uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all duration-300'>
+          <button className='mt-36 relative z-10 px-8 py-3 border border-black uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all duration-300' 
+          onClick={() => navigate('/gallery')}>
             Explore More
           </button>
       </section>
 
-      <section className='flex mt-38 items-start -mb-40 bg-red-950 w-full h-180 justify-center'>
+      <section className='flex mt-38 items-start -mb-40 bg-[#800000] w-full h-180 justify-center'>
         
         <div className='flex flex-col justify-start items-star'>
           <h1 className='text-white font-rozha text-[400px] hover:text-[#4f0303] transition-all duration-800'>शुदेवयम</h1>

@@ -52,7 +52,7 @@ const Gallery = () => {
 
   return (
     <div className='w-screen ml-[50%] -translate-x-1/2 mb-20'>
-      <section className='flex flex-col gap-8 justify-end text-start mt-36 mx-20'>
+      <section className='flex flex-col gap-8 justify-end text-start mt-40 mx-20'>
         <h1 className='text-9xl'>GALLERY</h1>
         <p className='w-1/2 pr-28'>
           For over a decade, we have been more than just a boutique—we are a destination for the modern woman. From breezy summer staples to luxurious wedding couture, explore the designs that have defined our journey
@@ -97,8 +97,6 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* 5. LOAD MORE BUTTON */}
-          {/* Only show if there are more items to see */}
           {visibleCount < filteredItems.length && (
             <div className="flex justify-center mt-20">
               <button 
