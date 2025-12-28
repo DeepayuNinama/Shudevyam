@@ -20,7 +20,7 @@ const About = () => {
           <h1 className='text-9xl'>Manasi Doctor</h1>
         </div>
         <div className="flex w-1/2 justify-between mr-28 gap-10">
-          <img src="./images/temp.jpg" className="w-3/5  object-cover object-center" alt="" />
+          <img src="/images/temp.jpg" className="w-3/5  object-cover object-center" alt="" />
           <div className="flex flex-col justify-between text-start">
             <p className="mt-10">
               <FontAwesomeIcon icon={faArrowUp} className="w-20 h-20 rotate-135 text-4xl mb-4" />
@@ -55,7 +55,7 @@ const About = () => {
            
           </div>
 
-          <img src="./images/temp.jpg" className='h-162.5 w-152.5 object-cover' alt="" />
+          <img src="/images/temp.jpg" className='h-162.5 w-152.5 object-cover' alt="" />
         </div>
       </section>
     </div>

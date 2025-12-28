@@ -11,7 +11,7 @@ export default function Testimonials() {
       name: "Deepayu Ninama",
       paraOne: "For over a decade, we have been more than just a boutique—we are a destination for the modern woman. From breezy summer staples to luxurious wedding couture.",
       paraTwo: "Every design reflects a promise of quality and individuality.",
-      imgLink: "./images/temp.jpg", // Ensure this path is correct
+      imgLink: "/images/temp.jpg", // Ensure this path is correct
     },
     {
       id: 2,

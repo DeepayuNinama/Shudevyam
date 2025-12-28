@@ -1,33 +1,27 @@
 import React, { useState } from 'react';
-// import { NavLink } from "react-router-dom"; // Uncomment if needed
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  
-  // 1. NEW STATE: Track how many items are visible
-  // Initial: 4 rows * 4 columns = 16 images
   const [visibleCount, setVisibleCount] = useState(16); 
 
-  // --- Mock Data (I duplicated items to simulate a large list for testing) ---
   const galleryItems = [
-    { id: 1, title: "Summer Breeze", year: "2014", category: "casual", image: "./images/temp.jpg" },
-    { id: 2, title: "Autumn Edit", year: "2015", category: "formal", image: "./images/temp.jpg" },
-    { id: 3, title: "Bridal Couture", year: "2016", category: "ethnic", image: "./images/temp.jpg" },
+    { id: 1, title: "Summer Breeze", year: "2014", category: "casual", image: "/images/temp.jpg" },
+    { id: 2, title: "Autumn Edit", year: "2015", category: "formal", image: "/images/temp.jpg" },
+    { id: 3, title: "Bridal Couture", year: "2016", category: "ethnic", image: "/images/temp.jpg" },
     { id: 4, title: "Urban Chic", year: "2017", category: "casual", image: "./images/temp.jpg" },
-    { id: 5, title: "Silk Drapes", year: "2018", category: "ethnic", image: "./images/temp.jpg" },
-    { id: 6, title: "Winter Solstice", year: "2019", category: "formal", image: "./images/temp.jpg" },
-    { id: 7, title: "Fusion Era", year: "2020", category: "art work", image: "./images/temp.jpg" },
-    { id: 8, title: "Modern Heritage", year: "2024", category: "ethnic", image: "./images/temp.jpg" },
-    // ... duplicate these items in your real code to see the effect ...
-    { id: 9, title: "Summer Breeze", year: "2014", category: "casual", image: "./images/temp.jpg" },
-    { id: 10, title: "Autumn Edit", year: "2015", category: "formal", image: "./images/temp.jpg" },
-    { id: 11, title: "Bridal Couture", year: "2016", category: "ethnic", image: "./images/temp.jpg" },
-    { id: 12, title: "Urban Chic", year: "2017", category: "casual", image: "./images/temp.jpg" },
-    { id: 13, title: "Silk Drapes", year: "2018", category: "ethnic", image: "./images/temp.jpg" },
-    { id: 14, title: "Winter Solstice", year: "2019", category: "formal", image: "./images/temp.jpg" },
-    { id: 15, title: "Fusion Era", year: "2020", category: "art work", image: "./images/temp.jpg" },
-    { id: 16, title: "Modern Heritage", year: "2024", category: "ethnic", image: "./images/temp.jpg" },
-    { id: 17, title: "Extra Item", year: "2024", category: "ethnic", image: "./images/temp.jpg" },
+    { id: 5, title: "Silk Drapes", year: "2018", category: "ethnic", image: "/images/temp.jpg" },
+    { id: 6, title: "Winter Solstice", year: "2019", category: "formal", image: "/images/temp.jpg" },
+    { id: 7, title: "Fusion Era", year: "2020", category: "art work", image: "/images/temp.jpg" },
+    { id: 8, title: "Modern Heritage", year: "2024", category: "ethnic", image: "/images/temp.jpg" },
+    { id: 9, title: "Summer Breeze", year: "2014", category: "casual", image: "/images/temp.jpg" },
+    { id: 10, title: "Autumn Edit", year: "2015", category: "formal", image: "/images/temp.jpg" },
+    { id: 11, title: "Bridal Couture", year: "2016", category: "ethnic", image: "/images/temp.jpg" },
+    { id: 12, title: "Urban Chic", year: "2017", category: "casual", image: "/images/temp.jpg" },
+    { id: 13, title: "Silk Drapes", year: "2018", category: "ethnic", image: "/images/temp.jpg" },
+    { id: 14, title: "Winter Solstice", year: "2019", category: "formal", image: "/images/temp.jpg" },
+    { id: 15, title: "Fusion Era", year: "2020", category: "art work", image: "/images/temp.jpg" },
+    { id: 16, title: "Modern Heritage", year: "2024", category: "ethnic", image: "/images/temp.jpg" },
+    { id: 17, title: "Extra Item", year: "2024", category: "ethnic", image: "/images/temp.jpg" },
   ];
 
   const categories = ["all", "ethnic", "formal", "casual", "art work"];
@@ -36,10 +30,8 @@ const Gallery = () => {
     ? galleryItems 
     : galleryItems.filter((item) => item.category === activeCategory);
 
-  // 2. LOGIC: Slice the array to only show 'visibleCount' items
   const visibleItems = filteredItems.slice(0, visibleCount);
 
-  // 3. HANDLER: Load 5 more rows (5 * 4 columns = 20 items)
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 20);
   };
