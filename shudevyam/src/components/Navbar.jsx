@@ -7,8 +7,10 @@ export default function Navbar() {
     const location = useLocation();
     const [open, setOpen] = useState(false);
 
+    const isMobileView = window.innerWidth < 768;
     const isHomePage = location.pathname === '/';
-    const logoSrc = isHomePage 
+    const isContactPageMobile = location.pathname === '/Contact' && isMobileView;
+    const logoSrc = (isHomePage || isContactPageMobile) 
         ? "/images/shudevyamwhite.png" 
         : "/images/shydevyambrown.png";
 
