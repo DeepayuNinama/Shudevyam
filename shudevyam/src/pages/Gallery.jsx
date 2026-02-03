@@ -44,22 +44,22 @@ const Gallery = () => {
 
   return (
     <div className='w-screen ml-[50%] -translate-x-1/2 mb-20'>
-      <section className='flex flex-col gap-8 justify-end text-start mt-40 mx-20'>
-        <h1 className='text-9xl'>GALLERY</h1>
-        <p className='w-1/2 pr-28'>
+      <section className='flex flex-col gap-4 md:gap-8 justify-end text-start mt-30 md:mt-40 mx-4 sm:mx-8 md:mx-20'>
+        <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-light'>GALLERY</h1>
+        <p className='w-full md:w-1/2 text-sm sm:text-base md:text-base md:pr-28 text-gray-600'>
           For over a decade, we have been more than just a boutique—we are a destination for the modern woman. From breezy summer staples to luxurious wedding couture, explore the designs that have defined our journey
         </p>
       </section>
 
-      <section className='mt-28 mx-20'>
-        <div className='flex justify-between border-b pb-4'>
-          <p>FILTER</p>
-          <div className='flex gap-16 uppercase'>
+      <section className='mt-8 md:mt-12 mx-4 sm:mx-8 md:mx-20'>
+        <div className='flex flex-col sm:flex-row justify-between border-b pb-4 gap-4 sm:gap-0'>
+          <p className='hidden md:block text-xs sm:text-sm uppercase tracking-wider'>Filter</p>
+          <div className='flex justify-between flex-wrap gap-4 sm:gap-6 md:gap-16 uppercase text-sm sm:text-sm'>
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => handleCategoryChange(cat)}
-                className={`transition-colors duration-300 cursor-pointer uppercase ${
+                className={`transition-colors duration-300 cursor-pointer uppercase whitespace-nowrap ${
                   activeCategory === cat ? "text-[#800000]" : "text-gray-400 hover:text-black"
                 }`}
               >
@@ -69,9 +69,9 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className='mt-16'>
+        <div className='mt-8 md:mt-16'>
           {/* Render the VISIBLE items only */}
-          <div className="grid lg:grid-cols-4 gap-y-10 gap-x-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 sm:gap-y-10 gap-x-3 sm:gap-x-6">
             {visibleItems.map((item) => (
               <div key={item.id} className="group cursor-pointer">
                 <div className="w-full overflow-hidden">
@@ -81,19 +81,19 @@ const Gallery = () => {
                     className="w-full aspect-3/4 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex justify-between items-start mt-4 text-black bg-transparent">
-                  <p className="text-sm font-medium uppercase tracking-widest">{item.title}</p>
-                  <p className="text-sm font-medium text-neutral-500">{item.year}</p>
+                <div className="flex flex-row justify-between sm:items-start mt-3 sm:mt-4 text-black bg-transparent gap-2 sm:gap-0">
+                  <p className="text-xs sm:text-sm font-medium uppercase tracking-widest">{item.title}</p>
+                  <p className="text-xs sm:text-sm font-medium text-neutral-500">{item.year}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {visibleCount < filteredItems.length && (
-            <div className="flex justify-center mt-20">
+            <div className="flex justify-center mt-12 md:mt-20">
               <button 
                 onClick={handleLoadMore}
-                className="px-8 py-3 border border-black uppercase tracking-widest hover:bg-[#800000] hover:text-white transition-all duration-300"
+                className="px-6 sm:px-8 py-2 sm:py-3 border border-black uppercase tracking-widest text-xs sm:text-sm hover:bg-[#800000] hover:text-white transition-all duration-300"
               >
                 Load More
               </button>
