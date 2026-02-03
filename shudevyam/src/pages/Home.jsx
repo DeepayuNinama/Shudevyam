@@ -1,5 +1,6 @@
 import React from 'react';
 import HorizontalScrollSection from '../components/HorizontalScrollSection.jsx'
+import landingImg from '/images/landing_img.png';
 import tempBg from '/images/temp.jpg';
 import { redirect, useNavigate  } from 'react-router-dom';
 
@@ -8,7 +9,16 @@ export default function Home() {
   return (
     <div className='w-screen  ml-[50%] -translate-x-1/2  '>
 
-      <section className="flex w-full h-screen bg-cover bg-top   " style={{ backgroundImage: `url(${tempBg})` }}>
+      {/* MOBILE VIEW - Landing Image */}
+      <section className="md:hidden flex w-full h-screen bg-cover bg-top" style={{ backgroundImage: `url(${landingImg})` }}>
+        <div className='w-full flex flex-col items-start justify-end pl-6 pb-16 gap-4 font-[montserat]'>
+          <p className='text-white text-lg text-start'>Bold looks for the next era</p>
+          <p className='text-white text-4xl text-start'>"Where moments become monuments"</p>
+        </div>
+      </section>
+
+      {/* DESKTOP VIEW - Default Image */}
+      <section className="hidden md:flex w-full h-screen bg-cover bg-top" style={{ backgroundImage: `url(${tempBg})` }}>
         <div className='w-2/4 flex flex-col  items-left justify-end pl-20 pb-28  gap-8 font-[montserat]'>
           <p className='text-white text-2xl text-start'>Bold looks for the next era</p>
           <p className='text-white text-8xl text-start'>"Where moments become monuments"</p>
