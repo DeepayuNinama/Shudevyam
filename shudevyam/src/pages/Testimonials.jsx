@@ -45,16 +45,16 @@ export default function Testimonials() {
   const currentData = TestimonialData[currentIndex];
 
   return (
-    <div className='w-screen ml-[50%] -translate-x-1/2 mb-20'>
+    <div className='w-full mx-auto'>
 
-      <section className='flex flex-col gap-8 justify-end text-start mt-40 mx-20'>
-        <h1 className='text-9xl uppercase'>Testimonials</h1>
-        <p className='w-1/2 pr-28'>
+      <section className='flex flex-col gap-6 sm:gap-8 justify-end text-start mt-30 md:mt-40 mx-6 sm:mx-10 lg:mx-20'>
+        <h1 className='text-4xl sm:text-6xl lg:text-9xl uppercase'>Testimonials</h1>
+        <p className='w-full lg:w-1/2 pr-0 lg:pr-28 text-base sm:text-lg'>
           For over a decade, we have been more than just a boutique—we are a destination for the modern woman. From breezy summer staples to luxurious wedding couture, explore the designs that have defined our journey
         </p>
       </section>
 
-      <section className='relative mt-28 mx-20'>
+      <section className='relative mt-16 sm:mt-24 lg:mt-28 mx-6 sm:mx-10 lg:mx-20'>
         
         {/* BACKGROUND IMAGE - Dynamic based on current slide */}
         {/* AnimatePresence allows the exiting image to fade out while new one fades in */}
@@ -73,7 +73,7 @@ export default function Testimonials() {
         </div>
 
         {/* CONTENT CONTAINER */}
-        <div className='bg-red-950/40 p-16'>
+        <div className='bg-red-950/40 p-6 sm:p-10 lg:p-16'>
             
             {/* 3. ANIMATION: Wrap content in AnimatePresence + motion.div */}
             <AnimatePresence mode="wait">
@@ -83,13 +83,13 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}   // Fade in and slide to center
                 exit={{ opacity: 0, x: -20 }}    // Fade out and slide to left
                 transition={{ duration: 0.4 }}
-                className='flex justify-between relative z-10 gap-10'
+                className='flex flex-col lg:flex-row justify-between relative z-0 gap-8 lg:gap-10'
               >
                 
                 {/* LEFT: Name */}
-                <div className='flex flex-col mt-8 text-white text-end gap-2 w-1/3 '>
-                  <p className='text-sm'>// TESTIMONIAL</p>
-                  <p className='uppercase text-5xl font-semibold'>
+                <div className='flex flex-col mt-2 sm:mt-6 lg:mt-8 text-white text-start lg:text-end gap-2 w-full lg:w-1/3'>
+                  <p className='text-xs sm:text-sm'>// TESTIMONIAL</p>
+                  <p className='uppercase text-2xl sm:text-4xl lg:text-5xl font-semibold'>
                     {currentData.name}
                   </p>
                 </div>
@@ -97,17 +97,17 @@ export default function Testimonials() {
                 {/* MIDDLE: Image */}
                 <img 
                   src={currentData.imgLink} 
-                  className='w-1/3 h-150 object-cover shadow-2xl' 
+                  className='w-full lg:w-1/3 h-64 sm:h-80 lg:h-[30rem] object-cover shadow-2xl' 
                   alt={currentData.name} 
                 />
 
                 {/* RIGHT: Text */}
-                <div className='flex flex-col text-white justify-between w-1/3 text-start mt-8'>
+                <div className='flex flex-col text-white justify-between w-full lg:w-1/3 text-start mt-2 sm:mt-6 lg:mt-8'>
                   <div>
-                    <p className='pb-10 leading-relaxed'>
+                    <p className='pb-6 sm:pb-10 leading-relaxed text-sm sm:text-base'>
                       {currentData.paraOne}
                     </p>
-                    <p className='leading-relaxed'>
+                    <p className='leading-relaxed text-sm sm:text-base'>
                       {currentData.paraTwo}
                     </p>
                   </div>
@@ -122,18 +122,18 @@ export default function Testimonials() {
             </AnimatePresence>
 
             {/* NAVIGATION BUTTONS (Placed outside animation wrapper to stay stable) */}
-            <div className='flex justify-end gap-5 -mt-16 relative z-20'>
+            <div className='flex justify-center lg:justify-end gap-4 sm:gap-5 mt-6 lg:-mt-16 relative z-0'>
                 <button 
                   onClick={handlePrev}
-                  className='p-4 border rounded-full border-[#ffffff2f] hover:bg-[#ffffff2f] transition-all text-white'
+                  className='p-3 sm:p-4 border rounded-full border-[#ffffff2f] hover:bg-[#ffffff2f] transition-all text-white'
                 >
-                  <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
+                  <FontAwesomeIcon icon={faAngleLeft} className="text-2xl sm:text-3xl" />
                 </button>
                 <button 
                   onClick={handleNext}
-                  className='p-4 border rounded-full border-[#ffffff2f] hover:bg-[#ffffff2f] transition-all text-white'
+                  className='p-3 sm:p-4 border rounded-full border-[#ffffff2f] hover:bg-[#ffffff2f] transition-all text-white'
                 >
-                  <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
+                  <FontAwesomeIcon icon={faAngleRight} className="text-2xl sm:text-3xl" />
                 </button>
             </div>
 

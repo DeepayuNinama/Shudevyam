@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 
 // --- Data for the cards ---
 const cards = [
@@ -35,7 +35,7 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-125 w-150 overflow-hidden bg-neutral-200 shrink-0"
+      className="group relative h-[50vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] w-72 sm:w-80 md:w-96 lg:w-[500px] overflow-hidden bg-neutral-200 shrink-0"
     >
       <div
         style={{
@@ -60,18 +60,18 @@ export default function HorizontalScrollSection() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-100%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-85%"]);
+  const smoothX = useSpring(x, { stiffness: 100, damping: 30, mass: 0.5 });
 
   return (
-    <section ref={targetRef} className="relative h-[70vh] bg-white">
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden justify-start pt-40">
+    <section ref={targetRef} className="relative h-auto bg-white w-full overflow-hidden">
+      <div className="sticky top-0 flex h-auto flex-col overflow-hidden justify-start items-start w-full pt-8 sm:pt-12 md:pt-16 lg:pt-20">
         {/* Scrollable Cards */}
-        <motion.div style={{ x }} className="flex gap-10">
+        <motion.div style={{ x: smoothX }} className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 pl-4 sm:pl-8 md:pl-20">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
         </motion.div>
-        
       </div>
     </section>
   );

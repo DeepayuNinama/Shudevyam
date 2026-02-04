@@ -20,12 +20,22 @@
 }
 :root {
   font-family: var(--font-fragment);
+   min-height: 100vh;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body, html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* In index.css */
