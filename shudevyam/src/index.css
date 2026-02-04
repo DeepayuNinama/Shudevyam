@@ -20,6 +20,11 @@
 }
 :root {
   font-family: var(--font-fragment);
+   min-height: 100vh;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body, html {

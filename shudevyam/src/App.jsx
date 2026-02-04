@@ -51,7 +51,7 @@ function App() {
   return (
     <div className='no-scrollbar'> 
       <Navbar />
-      <main className='-mt-8'> 
+      <main> 
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/gallery' element={<Gallery />} />
