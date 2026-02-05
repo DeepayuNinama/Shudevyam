@@ -54,7 +54,7 @@ export default function Testimonials() {
         </p>
       </section>
 
-      <section className='relative mt-16 sm:mt-24 lg:mt-28 mx-6 sm:mx-10 lg:mx-20'>
+      <section className='relative mt-16 sm:mt-24 lg:mt-28 mx-0 sm:mx-10 lg:mx-20'>
         
         {/* BACKGROUND IMAGE - Dynamic based on current slide */}
         {/* AnimatePresence allows the exiting image to fade out while new one fades in */}
@@ -73,7 +73,7 @@ export default function Testimonials() {
         </div>
 
         {/* CONTENT CONTAINER */}
-        <div className='bg-red-950/40 p-6 sm:p-10 lg:p-16'>
+        <div className='bg-red-950/40 p-6 sm:p-10 lg:p-16 h-[80vh] overflow-hidden relative pb-40'>
             
             {/* 3. ANIMATION: Wrap content in AnimatePresence + motion.div */}
             <AnimatePresence mode="wait">
@@ -122,7 +122,7 @@ export default function Testimonials() {
             </AnimatePresence>
 
             {/* NAVIGATION BUTTONS (Placed outside animation wrapper to stay stable) */}
-            <div className='flex justify-center lg:justify-end gap-4 sm:gap-5 mt-6 lg:-mt-16 relative z-0'>
+            <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-4 sm:gap-5 z-10'>
                 <button 
                   onClick={handlePrev}
                   className='p-3 sm:p-4 border rounded-full border-[#ffffff2f] hover:bg-[#ffffff2f] transition-all text-white'
