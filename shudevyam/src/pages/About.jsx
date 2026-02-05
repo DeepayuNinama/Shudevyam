@@ -13,7 +13,7 @@ const About = () => {
     { id:6 , title:"Established Year",  desc:"Norm Interior is a design studio studiostudio studio", year:"2024" },
   ];
   return (
-    <div className="w-full max-w-[1400px] mx-auto mt-24 px-6 sm:px-10 lg:px-0 lg:max-w-none lg:w-screen lg:ml-[50%] lg:-translate-x-1/2">
+    <div className="w-full max-w-[1400px] mx-auto mt-24 sm:mt-24 px-6 sm:px-10 lg:px-0 lg:max-w-none lg:w-screen lg:ml-[50%] lg:-translate-x-1/2">
       <section className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0 mt-16 lg:mt-40 lg:h-180">
         <div className="flex flex-col w-full lg:w-1/3 items-start justify-end text-start lg:ml-20 lg:-rotate-90">
           <p className='text-base sm:text-xl lg:text-2xl uppercase mt-6 sm:mt-10 lg:mt-0'>founder</p>
@@ -35,21 +35,23 @@ const About = () => {
         </div>
       </section>
 
-      <section className='bg-[#800000] w-full mt-16 sm:mt-24 lg:mt-28 rounded-[32px] sm:rounded-[50px] lg:rounded-[50px] -mb-24 sm:-mb-32 lg:-mb-40 lg:h-400'>
-        <div className='flex flex-col lg:flex-row justify-between pt-16 sm:pt-24 lg:pt-28 items-start lg:items-end border-b pb-10 sm:pb-16 lg:pb-20 border-white px-6 sm:px-10 lg:px-20 gap-6'>
-          <h1 className='text-white text-3xl sm:text-5xl lg:text-8xl text-start uppercase font-rozha'>Continued on <br /> our journey</h1>
-          <h1 className='text-white text-start text-sm sm:text-base lg:text-lg lg:px-20'>Norm Interior is a design studio specializing in architecture, <br /> interior design, and furniture, creating spaces.</h1>
+      <section className='bg-[#800000] w-screen ml-[50%] -translate-x-1/2 sm:w-full sm:ml-0 sm:translate-x-0 mt-16 sm:mt-24 lg:mt-28 rounded-[32px] sm:rounded-[50px] lg:rounded-[50px] -mb-24 sm:-mb-32 lg:-mb-40 lg:h-400 pb-20 sm:pb-0'>
+        <div className='flex flex-col lg:flex-row justify-between pt-16 sm:pt-24 lg:pt-28 items-center lg:items-end border-b pb-10 sm:pb-16 lg:pb-20 border-white px-6 sm:px-10 lg:px-20 gap-6'>
+          <h1 className='text-white text-5xl sm:text-5xl lg:text-8xl text-center uppercase font-rozha'>Continued on <br /> our journey</h1>
+          <h1 className='text-white text-center lg:text-start text-sm sm:text-base lg:text-lg lg:px-20'>Norm Interior is a design studio specializing in architecture, <br /> interior design, and furniture, creating spaces.</h1>
         </div>
 
         <div className='flex flex-col lg:flex-row mx-6 sm:mx-10 lg:mx-20 mt-10 sm:mt-16 lg:mt-28 gap-10 lg:gap-20 justify-between pb-12 lg:pb-20'>
 
           <div className='flex flex-col gap-8 lg:gap-10 w-full lg:w-1/2 text-start lg:mt-38'>
             {journeyMap.map((item, index) => (
-              <div key={item.id} className='flex flex-col sm:flex-row sm:items-center border-b pb-6 sm:pb-8 text-white border-white gap-3 sm:gap-8 lg:gap-16 lg:flex-row lg:items-center lg:pb-8'>
-                <p className="text-sm sm:text-base">{String(index + 1).padStart(2, '0')}</p>
+              <div key={item.id} className='flex flex-col border-b pb-6 sm:pb-8 text-white border-white gap-2 sm:gap-3'>
+                <div className="flex items-center justify-between">
+                  <p className="text-sm sm:text-base">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="text-sm sm:text-base">{item.year}</p>
+                </div>
                 <p className="text-sm sm:text-base">{item.title}</p>
                 <p className="text-sm sm:text-base">{item.desc}</p>
-                <p className="text-sm sm:text-base">{item.year}</p>
               </div>
             ))}
            

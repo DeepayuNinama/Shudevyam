@@ -45,9 +45,9 @@ export default function Testimonials() {
   const currentData = TestimonialData[currentIndex];
 
   return (
-    <div className='w-full mx-auto'>
+    <div className='w-full mx-auto pt-32 sm:pt-0'>
 
-      <section className='flex flex-col gap-6 sm:gap-8 justify-end text-start mt-30 md:mt-40 mx-6 sm:mx-10 lg:mx-20'>
+      <section className='flex flex-col gap-6 sm:gap-8 justify-end text-start mt-0 sm:mt-32 lg:mt-40 mx-6 sm:mx-10 lg:mx-20'>
         <h1 className='text-4xl sm:text-6xl lg:text-9xl uppercase'>Testimonials</h1>
         <p className='w-full lg:w-1/2 pr-0 lg:pr-28 text-base sm:text-lg'>
           For over a decade, we have been more than just a boutique—we are a destination for the modern woman. From breezy summer staples to luxurious wedding couture, explore the designs that have defined our journey
