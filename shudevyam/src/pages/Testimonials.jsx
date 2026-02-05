@@ -73,7 +73,7 @@ export default function Testimonials() {
         </div>
 
         {/* CONTENT CONTAINER */}
-        <div className='bg-red-950/40 p-6 sm:p-10 lg:p-16 h-[80vh] sm:h-auto overflow-hidden relative pb-40 sm:pb-0'>
+        <div className='bg-red-950/40 p-6 sm:p-10 lg:p-16 h-[86vh] sm:h-auto overflow-visible sm:overflow-hidden relative pb-8 sm:pb-0'>
             
             {/* 3. ANIMATION: Wrap content in AnimatePresence + motion.div */}
             <AnimatePresence mode="wait">
@@ -83,7 +83,7 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}   // Fade in and slide to center
                 exit={{ opacity: 0, x: -20 }}    // Fade out and slide to left
                 transition={{ duration: 0.4 }}
-                className='flex flex-col lg:flex-row justify-between relative z-0 gap-8 lg:gap-10'
+                className='flex flex-col lg:flex-row justify-between relative z-0 gap-8 lg:gap-10 mb-8 sm:mb-0'
               >
                 
                 {/* LEFT: Name */}
@@ -122,7 +122,7 @@ export default function Testimonials() {
             </AnimatePresence>
 
             {/* NAVIGATION BUTTONS (Placed outside animation wrapper to stay stable) */}
-            <div className='absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-4 sm:gap-5 z-10 sm:relative sm:bottom-auto sm:left-auto sm:translate-x-0 sm:mt-6 lg:-mt-16 sm:justify-end'>
+            <div className='absolute bottom-4 left-1/2 -translate-x-1/2 w-full flex justify-center gap-4 sm:gap-5 z-10 sm:static sm:translate-x-0 sm:mt-6 lg:-mt-16 sm:justify-end'>
                 <button 
                   onClick={handlePrev}
                   className='p-3 sm:p-4 border rounded-full border-[#ffffff2f] hover:bg-[#ffffff2f] transition-all text-white'
