@@ -9,7 +9,7 @@ export default function Navbar() {
 
     const isMobileView = window.innerWidth < 768;
     const isHomePage = location.pathname === '/';
-    const isContactPageMobile = location.pathname === '/Contact' && isMobileView;
+    const isContactPageMobile = location.pathname === '/contact' && isMobileView;
     const logoSrc = (isHomePage || isContactPageMobile) 
         ? "/images/shudevyamwhite.png" 
         : "/images/shydevyambrown.png";
@@ -37,7 +37,7 @@ export default function Navbar() {
         {/* DESKTOP VIEW - Logo + Nav Bar */}
         <div className="hidden md:flex bg-transparent items-center justify-between pr-0 w-full">
           {/* LOGO */}
-          <div className="flex w-1/3 h-20 items-center pl-20 pt-1 cursor-pointer" onClick={() => navigate('/')}>
+          <div className="flex w-1/3 h-24 items-center pl-20 pt-1 cursor-pointer" onClick={() => navigate('/')}>
               <img src={logoSrc} alt="Logo" className="max-h-full object-contain" />
           </div>
 

@@ -43,10 +43,10 @@ const Gallery = () => {
   };
 
   return (
-    <div className='w-screen ml-[50%] -translate-x-1/2 mb-20'>
-      <section className='flex flex-col gap-4 md:gap-8 justify-end text-start mt-30 md:mt-40 mx-4 sm:mx-8 md:mx-20'>
+    <div className='w-screen ml-[50%] -translate-x-1/2 mb-8 sm:mb-20 pt-32 sm:pt-0'>
+      <section className='flex flex-col gap-4 md:gap-8 justify-end text-start mt-0 sm:mt-40 md:mt-40 mx-4 sm:mx-8 md:mx-20'>
         <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-light'>GALLERY</h1>
-        <p className='w-full md:w-1/2 text-sm sm:text-base md:text-base md:pr-28 text-gray-600'>
+        <p className='w-full md:w-1/2 text-sm sm:text-base md:text-base md:pr-28 text-gray-600 mb-6 sm:mb-0'>
           For over a decade, we have been more than just a boutique—we are a destination for the modern woman. From breezy summer staples to luxurious wedding couture, explore the designs that have defined our journey
         </p>
       </section>
@@ -90,7 +90,7 @@ const Gallery = () => {
           </div>
 
           {visibleCount < filteredItems.length && (
-            <div className="flex justify-center mt-12 md:mt-20">
+            <div className="flex justify-center mt-8 md:mt-20 mb-2 sm:mb-0">
               <button 
                 onClick={handleLoadMore}
                 className="px-6 sm:px-8 py-2 sm:py-3 border border-black uppercase tracking-widest text-xs sm:text-sm hover:bg-[#800000] hover:text-white transition-all duration-300"
