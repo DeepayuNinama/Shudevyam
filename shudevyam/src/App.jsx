@@ -13,6 +13,7 @@ import Testimonials from './pages/Testimonials.jsx';
 // Component Imports
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 const activeLink = "flex h-full items-center border-t-4 border-[#800000] text-white";
 const inactiveLink = "flex h-full items-center border-t-4 border-transparent text-zinc-400 hover:text-white hover:pt-2 transition-all duration-200";
@@ -50,6 +51,7 @@ function App() {
 
   return (
     <div className='no-scrollbar'> 
+      <ScrollToTop />
       <Navbar />
       <main> 
         <Routes>
@@ -62,9 +64,7 @@ function App() {
         </Routes>
       </main>
       
-      <div className='mt-40'>
-        <Footer />
-      </div>
+      <Footer />
       
     </div>
   )

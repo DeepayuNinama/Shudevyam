@@ -67,15 +67,17 @@ export default function Home() {
           </button>
       </section>
 
-      <section className='relative flex mt-10 sm:mt-20 md:mt-28 lg:mt-38 items-center bg-[#800000] w-full h-[400px] sm:h-[500px] md:h-[650px] lg:h-[800px] xl:h-180 justify-start overflow-hidden'>
+      <section className='relative flex mt-10 sm:mt-20 md:mt-28 lg:mt-38 items-center bg-[#800000] w-full h-[220px] sm:h-[500px] md:h-[650px] lg:h-[800px] xl:h-180 justify-start overflow-hidden'>
   
-  <div className='relative w-full h-full flex items-center'>
-    <h1 className='text-white font-rozha text-[100px] sm:text-[160px] md:text-[240px] lg:text-[340px] xl:text-[450px] 2xl:text-[550px] hover:text-[#4f0303] transition-all duration-800 leading-none tracking-tight drop-shadow-[0_25px_25px_rgba(79,3,3,0.9)] pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20'>
-      शुदेवयम
-    </h1>
-    <p className='absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28 xl:bottom-32 right-6 sm:right-10 md:right-14 lg:right-16 xl:right-20 text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl'>
-      Since 2014
-    </p>
+  <div className='relative w-full h-full flex items-center justify-center md:justify-start'>
+    <div className='flex flex-col items-end md:items-start w-fit mx-auto md:mx-0 md:w-full'>
+      <h1 className='text-white font-rozha text-[120px] sm:text-[160px] md:text-[240px] lg:text-[340px] xl:text-[450px] 2xl:text-[550px] hover:text-[#4f0303] transition-all duration-800 leading-[0.55] tracking-tight drop-shadow-[0_25px_25px_rgba(79,3,3,0.9)] text-center md:text-left md:pl-12 lg:pl-16 xl:pl-20'>
+        शुदेवयम
+      </h1>
+      <p className='mt-1 sm:mt-1 md:mt-0 text-white text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-right md:text-left self-end md:absolute md:bottom-24 lg:bottom-28 xl:bottom-32 md:right-14 lg:right-16 xl:right-20'>
+        Since 2014
+      </p>
+    </div>
   </div>
 </section>
     </div>

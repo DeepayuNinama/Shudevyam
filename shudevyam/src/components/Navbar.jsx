@@ -37,7 +37,7 @@ export default function Navbar() {
         {/* DESKTOP VIEW - Logo + Nav Bar */}
         <div className="hidden md:flex bg-transparent items-center justify-between pr-0 w-full">
           {/* LOGO */}
-          <div className="flex w-1/3 h-24 items-center pl-20 pt-1 cursor-pointer" onClick={() => navigate('/')}>
+          <div className="flex w-1/3 h-20 items-center pl-20 pt-1 cursor-pointer" onClick={() => navigate('/')}>
               <img src={logoSrc} alt="Logo" className="max-h-full object-contain" />
           </div>
 
@@ -52,28 +52,28 @@ export default function Navbar() {
             </NavLink>
 
             <NavLink 
-                to="/Gallery" 
+                to="/gallery" 
                 className={({ isActive }) => isActive ? activeLink : inactiveLink}
             >
                 Gallery
             </NavLink>
 
             <NavLink 
-                to="/Testimonials" 
+                to="/testimonials" 
                 className={({ isActive }) => isActive ? activeLink : inactiveLink}
             >
                 Testimonials
             </NavLink>
 
             <NavLink 
-                to="/About" 
+                to="/about" 
                 className={({ isActive }) => isActive ? activeLink : inactiveLink}
             >
                 Our Story
             </NavLink>
 
             <NavLink 
-                to="/Contact" 
+                to="/contact" 
                 className={({ isActive }) => isActive ? activeLink : inactiveLink}
             >
                 Contact
@@ -85,7 +85,7 @@ export default function Navbar() {
         {/* MOBILE VIEW - Logo + Hamburger */}
         <div className="md:hidden flex items-center justify-between w-full px-6 pt-4">
           {/* LOGO */}
-          <div className="flex h-20 items-center cursor-pointer" onClick={() => navigate('/')}>
+          <div className="flex h-16 items-center cursor-pointer" onClick={() => navigate('/')}>
               <img src={logoSrc} alt="Logo" className="max-h-full object-contain" />
           </div>
         <button
@@ -160,25 +160,25 @@ export default function Navbar() {
               HOME
             </button>
             <button
-              onClick={() => handleNavClick("/Gallery")}
+              onClick={() => handleNavClick("/gallery")}
               className="text-white uppercase tracking-wider text-4xl font-bold hover:translate-x-2 transition-transform duration-200 bg-none border-none cursor-pointer"
             >
               GALLERY
             </button>
             <button
-              onClick={() => handleNavClick("/Testimonials")}
+              onClick={() => handleNavClick("/testimonials")}
               className="text-white uppercase tracking-wider text-4xl font-bold hover:translate-x-2 transition-transform duration-200 bg-none border-none cursor-pointer"
             >
               TESTIMONIALS
             </button>
             <button
-              onClick={() => handleNavClick("/About")}
+              onClick={() => handleNavClick("/about")}
               className="text-white uppercase tracking-wider text-4xl font-bold hover:translate-x-2 transition-transform duration-200 bg-none border-none cursor-pointer"
             >
               OUR STORY
             </button>
             <button
-              onClick={() => handleNavClick("/Contact")}
+              onClick={() => handleNavClick("/contact")}
               className="text-white uppercase tracking-wider text-4xl font-bold hover:translate-x-2 transition-transform duration-200 bg-none border-none cursor-pointer"
             >
               CONTACT

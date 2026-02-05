@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-screen ml-[50%] -translate-x-1/2 -mb-40">
+    <div className="w-screen ml-[50%] -translate-x-1/2">
       {/* DESKTOP VIEW */}
       <section className="hidden md:flex justify-end w-full h-screen bg-cover bg-top items-center" style={{ backgroundImage: `url(${tempBg})` }}>
 
