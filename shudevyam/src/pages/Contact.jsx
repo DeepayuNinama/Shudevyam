@@ -4,8 +4,10 @@ import tempBg from '/images/bg-contact.jpg';
 const Contact = () => {
   const [selectedOption, setSelectedOption] = React.useState("Inquiry");
   const [showText, setShowText] = useState(false);
+  const [status, setStatus] = useState({ state: "idle", message: "" });
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     message: "",
   });
@@ -18,12 +20,43 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", {
-      interest: selectedOption,
-      ...formData,
-    });
+    setStatus({ state: "idle", message: "" });
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      setStatus({ state: "error", message: "Please fill all required fields." });
+      return;
+    }
+    if (!emailPattern.test(formData.email)) {
+      setStatus({ state: "error", message: "Please enter a valid email address." });
+      return;
+    }
+
+    setStatus({ state: "loading", message: "Sending..." });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          interest: selectedOption,
+          ...formData,
+        }),
+      });
+      const text = await response.text();
+      const data = text ? JSON.parse(text) : {};
+      if (!response.ok || !data?.ok) {
+        throw new Error(data?.error || "Something went wrong.");
+      }
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setStatus({ state: "success", message: "Thanks! We'll get back to you soon." });
+    } catch (error) {
+      setStatus({
+        state: "error",
+        message: error?.message || "Failed to send. Please try again.",
+      });
+    }
   };
 
   return (
@@ -64,6 +97,15 @@ const Contact = () => {
                 required
               />
               <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full bg-transparent border-b py-2 text-lg focus:outline-none text-white placeholder-white/70"
+                required
+              />
+              <input
                 type="tel"
                 name="phone"
                 placeholder="(+91) Phone Number"
@@ -88,9 +130,10 @@ const Contact = () => {
               type="submit"
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
-              className="px-8 py-3 w-1/3 bg-[#ffffff] text-[#800000] font-bold uppercase hover:bg-[#b10000] hover:text-white transition-all mt-8"
+              className="px-8 py-3 w-1/3 bg-[#ffffff] text-[#800000] font-bold uppercase hover:bg-[#b10000] hover:text-white transition-all mt-8 disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={status.state === "loading"}
             >
-              Submit
+              {status.state === "loading" ? "Sending..." : "Submit"}
             </button>
 
             <div className="h-6 mt-4 py-2">
@@ -101,6 +144,12 @@ const Contact = () => {
               )}
             </div>
           </div>
+          {status.state === "error" && (
+            <p className="mt-4 text-sm text-[#ffdddd]">{status.message}</p>
+          )}
+          {status.state === "success" && (
+            <p className="mt-4 text-sm text-[#e7ffe7]">{status.message}</p>
+          )}
 
         </form>
 
@@ -118,7 +167,7 @@ const Contact = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <h2 className="text-white text-2xl font-light text-left">
               I'm Interested In ...
             </h2>
@@ -163,6 +212,17 @@ const Contact = () => {
               required
             />
 
+            {/* Email Input */}
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="bg-transparent border-b-2 border-white/60 text-white placeholder-white/70 py-3 px-0 focus:outline-none focus:border-white transition-colors"
+              required
+            />
+
             {/* Message */}
             <textarea
               name="message"
@@ -178,11 +238,17 @@ const Contact = () => {
             <div className="flex flex-col gap-4 mt-6">
               <button
                 type="submit"
-                className="bg-white text-[#800000] px-8 py-3 font-semibold hover:bg-gray-100 transition-colors duration-300 w-full"
+                className="bg-white text-[#800000] px-8 py-3 font-semibold hover:bg-gray-100 transition-colors duration-300 w-full disabled:opacity-60 disabled:cursor-not-allowed"
+                disabled={status.state === "loading"}
               >
-                Submit
+                {status.state === "loading" ? "Sending..." : "Submit"}
               </button>
-              <p className="text-white text-sm text-center">We Reply Within 24 Hours</p>
+              <p className="text-white text-sm text-center">
+                {status.state === "success" ? status.message : "We Reply Within 24 Hours"}
+              </p>
+              {status.state === "error" && (
+                <p className="text-[#ffdddd] text-sm text-center">{status.message}</p>
+              )}
             </div>
           </form>
         </div>
